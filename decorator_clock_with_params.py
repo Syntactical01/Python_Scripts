@@ -1,4 +1,5 @@
 # Page 216
+# Note that this version cannot handle kargs (keyword arguments).
 import time
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
