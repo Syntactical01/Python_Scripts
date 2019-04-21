@@ -1,6 +1,7 @@
 # A decorator used to time methods
 # from Fluent Python by Luciano Ramalho page 216.
 # Note that this version cannot handle kargs (keyword arguments).
+# Page 213 has a simpler example.
 import time
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
