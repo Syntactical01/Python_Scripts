@@ -1,4 +1,5 @@
-# Page 205
+# A decorator used to time methods
+# from Fluent Python by Luciano Ramalho page 205.
 import time
 import functools
 
