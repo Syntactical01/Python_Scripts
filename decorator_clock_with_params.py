@@ -1,4 +1,5 @@
-# Page 216
+# A decorator used to time methods
+# from Fluent Python by Luciano Ramalho page 216.
 # Note that this version cannot handle kargs (keyword arguments).
 import time
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
@@ -12,6 +13,7 @@ def clock(fmt=DEFAULT_FMT):
             name = func.__name__
             args = ', '.join(repr(arg) for arg in _args)
             result = repr(_result)
+            # uses local variables for the format
             print(fmt.format(**locals()))
             return _result
         return clocked
