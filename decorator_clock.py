@@ -4,6 +4,7 @@ import time
 import functools
 
 def clock(func):
+    # Copy relavent attributes from func to clocked.
     @functools.wraps(func)
     def clocked(*args, **kwargs):
         t0 = time.time()
