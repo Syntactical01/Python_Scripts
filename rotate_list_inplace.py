@@ -10,7 +10,9 @@ def right_rotate_list(lst, rotate):
         for j in range(i + rotate, len(lst) + i + 1, rotate):
             lst[i], lst[j % len(lst)] = lst[j % len(lst)], lst[i]
 
-a = ['a', 'b', 'c', 'd', 'e']
+a = [chr(ord('a') + x) for x in range(26)] # full alphabet
 rotate = -4
 right_rotate_list(a, rotate)
 print(a)
+
+# Still contains a bug
