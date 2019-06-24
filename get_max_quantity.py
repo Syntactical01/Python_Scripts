@@ -3,6 +3,8 @@
 # Log(n) solution where `n` is of `sys.maxsize`.
 
 import sys
+import bisect
+
 class Search():
     def __init__(self, get_cost):
         self.get_cost = get_cost
@@ -22,12 +24,13 @@ class Search():
         """
         return sys.maxsize
 
-def get_cost(quantity):
+def get_cost_func(quantity):
     return quantity**2 + 3 * quantity + 100
-
 budget = 1358841213
 
-import bisect
-max_quantity = bisect.bisect(Search(get_cost), budget) - 1
+# bisect.bisect returns where an item should be inserted,
+# bit we want the value right before that insertion point
+# which is why we do -1
+max_quantity = bisect.bisect(Search(get_cost_func), budget) - 1
 
-print(get_cost(max_quantity), budget, get_cost(max_quantity + 1))
+print(get_cost_func(max_quantity), budget, get_cost_func(max_quantity + 1))
