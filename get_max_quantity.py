@@ -1,16 +1,18 @@
 # Given a max budget give the biggest quantity we can get for that budget
 # Solution uses bisect's binary search
+# Log(n) solution where `n` is of `sys.maxsize`.
 
 import sys
 class Search():
     def __init__(self, get_cost):
         self.get_cost = get_cost
-        self.length = 1
     
-    def __getitem__(self, index): # index is the quantity
-        self.length += 1
-        print("Called", index)
-        return self.get_cost(index)
+    def __getitem__(self, quantity): # index is the quantity
+        """
+        Implement [] for this class. When bisect calls,
+        this returns the cost for the given index.
+        """
+        return self.get_cost(quantity)
         
     def __len__(self):
         """
